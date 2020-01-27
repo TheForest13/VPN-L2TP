@@ -11,7 +11,7 @@
 
 В качестве клиента и cервера мы будем успользовать xl2tpd. Установим необходимые пакеты:
 
-# apt-get install l2tpd ppp
+    apt-get install l2tpd ppp
 
 Настройка Сервера
 
@@ -56,8 +56,8 @@ client server Pa$$word *
 
 Добавляем сервис в автозапуск и запускаем его:
 
-# systemctl enable xl2tpd
-# systemctl start xl2tpd
+    systemctl enable xl2tpd
+    systemctl start xl2tpd
 
 Настройка Клиента
 
@@ -93,15 +93,16 @@ noauth
 
 Пробуем подключиться к серверу:
 
-# xl2tpd -D
+     xl2tpd -D
 
 Если подключение прошло успешно то добавляем сервис в автозапуск и запускаем его:
 
-# systemctl enable xl2tpd
-# systemctl start xl2tpd
+     systemctl enable xl2tpd
+     systemctl start xl2tpd
 
 В системе должен появиться интерфейс ppp0:
 
-# ip a | grep ppp0
-74: ppp0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 3
+     ip a | grep ppp0
+     
+    74: ppp0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 3
     inet 192.168.173.3 peer 192.168.173.1/32 scope global ppp0
